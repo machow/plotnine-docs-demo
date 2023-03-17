@@ -1,3 +1,12 @@
+plotnine-examples
+_site
+reference/*
+objects.json
+
+#
+.DS_Store
+.*.sw[op]
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -127,3 +136,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+/.quarto/
