@@ -46,7 +46,6 @@ quartodoc:
       contents:
         - name: aes
           members: []
-          dynamic: true
         - after_stat
         - after_scale
         - stage
@@ -63,12 +62,9 @@ quartodoc:
         visual aspects of the representation are controlled by the aes mapping.
       package: plotnine.geoms
       contents:
-        - name: geom_abline
-          dynamic: true
-        - name: geom_area
-          dynamic: true
-        - name: geom_bar
-          dynamic: true
+        - geom_abline
+        - geom_area
+        - geom_bar
         - geom_blank
         - geom_boxplot
         - geom_col
