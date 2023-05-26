@@ -6,16 +6,14 @@ project:
     - "**.qmd"
 
 website:
-  title: pkgdown example
+  title: Plotnine
   navbar:
     left:
-      - href: https://machow.github.io/quartodoc/
-        text: quartodoc home
       - file: reference/index.qmd
         text: "Reference"
     right:
       - icon: github
-        href: https://github.com/machow/quartodoc/tree/main/examples/pkgdown
+        href: https://github.com/has2k1/plotnine
 
 format:
   html:
@@ -24,8 +22,8 @@ format:
 quartodoc:
   style: pkgdown
   dir: reference
-  display_name: relative
   package: plotnine
+  dynamic: true
   renderer:
     style: _renderer.py
 
@@ -33,11 +31,11 @@ quartodoc:
     - title: Plot creation
       desc: ""
       contents:
-        - ggplot.ggplot
+        - ggplot
         - qplot
         - watermark
         - layer
-        - animation.PlotnineAnimation
+        - animation:PlotnineAnimation
         - save_as_pdf_pages
     - title: Mapping aesthetics
       desc: |
@@ -65,59 +63,61 @@ quartodoc:
         visual aspects of the representation are controlled by the aes mapping.
       package: plotnine.geoms
       contents:
-        - name: geom_abline.geom_abline
+        - name: geom_abline
           dynamic: true
-        - name: geom_area.geom_area
+        - name: geom_area
           dynamic: true
-        - geom_bar.geom_bar
-        - geom_blank.geom_blank
-        - geom_boxplot.geom_boxplot
-        - geom_col.geom_col
-        - geom_count.geom_count
-        - geom_crossbar.geom_crossbar
-        - geom_density.geom_density
-        - geom_density_2d.geom_density_2d
-        - geom_dotplot.geom_dotplot
-        - geom_errorbar.geom_errorbar
-        - geom_errorbarh.geom_errorbarh
-        - geom_freqpoly.geom_freqpoly
-        - geom_bin_2d.geom_bin_2d
-        - geom_histogram.geom_histogram
-        - geom_hline.geom_hline
-        - geom_jitter.geom_jitter
-        - geom_label.geom_label
-        - geom_line.geom_line
-        - geom_linerange.geom_linerange
-        - geom_map.geom_map
-        - geom_path.geom_path
-        - geom_point.geom_point
-        - geom_pointdensity.geom_pointdensity
-        - geom_pointrange.geom_pointrange
-        - geom_polygon.geom_polygon
-        - geom_quantile.geom_quantile
-        - geom_qq.geom_qq
-        - geom_qq_line.geom_qq_line
-        - geom_raster.geom_raster
-        - geom_rect.geom_rect
-        - geom_ribbon.geom_ribbon
-        - geom_rug.geom_rug
-        - geom_segment.geom_segment
-        - geom_sina.geom_sina
-        - geom_smooth.geom_smooth
-        - geom_spoke.geom_spoke
-        - geom_step.geom_step
-        - geom_text.geom_text
-        - geom_tile.geom_tile
-        - geom_violin.geom_violin
-        - geom_vline.geom_vline
+        - name: geom_bar
+          dynamic: true
+        - geom_blank
+        - geom_boxplot
+        - geom_col
+        - geom_count
+        - geom_crossbar
+        - geom_density
+        - geom_density_2d
+        - geom_dotplot
+        - geom_errorbar
+        - geom_errorbarh
+        - geom_freqpoly
+        - geom_bin_2d
+        - geom_histogram
+        - geom_hline
+        - geom_jitter
+        - geom_label
+        - geom_line
+        - geom_linerange
+        - geom_map
+        - geom_path
+        - geom_point
+        - geom_pointdensity
+        - geom_pointrange
+        - geom_polygon
+        - geom_quantile
+        - geom_qq
+        - geom_qq_line
+        - geom_raster
+        - geom_rect
+        - geom_ribbon
+        - geom_rug
+        - geom_segment
+        - geom_sina
+        - geom_smooth
+        - geom_spoke
+        - geom_step
+        - geom_text
+        - geom_tile
+        - geom_violin
+        - geom_vline
     - title: related to geoms
       desc: ""
       package: plotnine.geoms
       contents:
-        - annotate.annotate            # changed from just annotate
-        - annotation_logticks.annotation_logticks
-        - annotation_stripes.annotation_stripes
-        - geom_path.arrow
+        - annotate
+        - annotation_logticks
+        - annotation_stripes
+        # TODO: where is this?
+        #- geom_path.arrow
     - title: Labels
       desc: ""
       package: plotnine.labels
@@ -136,30 +136,30 @@ quartodoc:
       contents:
         # note it is this in plotnine docs: ~stat.stat
         # template: members-example.rst
-        - stat.stat
+        - stat
         # template: main.rst
-        - stat_bin.stat_bin
-        - stat_bin_2d.stat_bin_2d
-        - stat_bindot.stat_bindot
-        - stat_boxplot.stat_boxplot
-        - stat_count.stat_count
-        - stat_density.stat_density
-        - stat_density_2d.stat_density_2d
-        - stat_ecdf.stat_ecdf
-        - stat_ellipse.stat_ellipse
-        - stat_function.stat_function
-        - stat_hull.stat_hull
-        - stat_identity.stat_identity
-        - stat_qq.stat_qq
-        - stat_qq_line.stat_qq_line
-        - stat_quantile.stat_quantile
-        - stat_sina.stat_sina
-        - stat_smooth.stat_smooth
-        - stat_sum.stat_sum
-        - stat_summary.stat_summary
-        - stat_summary_bin.stat_summary_bin
-        - stat_unique.stat_unique
-        - stat_ydensity.stat_ydensity
+        - stat_bin
+        - stat_bin_2d
+        - stat_bindot
+        - stat_boxplot
+        - stat_count
+        - stat_density
+        - stat_density_2d
+        - stat_ecdf
+        - stat_ellipse
+        - stat_function
+        - stat_hull
+        - stat_identity
+        - stat_qq
+        - stat_qq_line
+        - stat_quantile
+        - stat_sina
+        - stat_smooth
+        - stat_sum
+        - stat_summary
+        - stat_summary_bin
+        - stat_unique
+        - stat_ydensity
 
     - title: facets
       desc: |
@@ -168,7 +168,7 @@ quartodoc:
       contents:
         # note it is this in plotnine docs: ~stat.stat
         # template: members-example.rst
-        - facet.facet
+        - facet
         # template: main.rst
         - facet_grid
         - facet_null

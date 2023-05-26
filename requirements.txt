@@ -1,2 +1,2 @@
-quartodoc @ git+https://github.com/machow/quartodoc.git@6fc48b15ad10aa176575e604dfa238f4293e3789
+quartodoc @ git+https://github.com/machow/quartodoc.git@dev-plotnine
 plotnine==0.10.1
