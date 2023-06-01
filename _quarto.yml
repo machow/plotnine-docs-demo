@@ -3,7 +3,8 @@ project:
   resources:
     - objects.json
   render:
-    - "**.qmd"
+    - "reference/**.qmd"
+    - "*.qmd"
 
 website:
   title: Plotnine

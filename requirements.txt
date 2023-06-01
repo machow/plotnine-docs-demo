@@ -1,4 +1,4 @@
 click
 quartodoc @ git+https://github.com/machow/quartodoc.git@dev-plotnine
-plotnine==0.10.1
+plotnine @ git@github.com:machow/plotnine.git@docs-quartodoc
 pyyaml
