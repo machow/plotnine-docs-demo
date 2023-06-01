@@ -6,6 +6,7 @@ from quartodoc import MdRenderer
 from quartodoc.renderers.base import convert_rst_link_to_md
 from quartodoc import layout
 from plum import dispatch
+from tabulate import tabulate
 from typing import Union
 
 from griffe import dataclasses as dc
@@ -30,6 +31,12 @@ Examples
 class Renderer(MdRenderer):
     style = "plotnine"
 
+    def _render_table(self, rows, headers):
+        colalign = [""]*len(headers)
+        table = tabulate(rows, headers=headers, tablefmt="unsafehtml", colalign=colalign)
+
+        return table.replace("<table", '<table class="table" ')
+
     @dispatch
     def render(self, el: layout.DocClass):
         return super().render(el)
@@ -43,7 +50,7 @@ class Renderer(MdRenderer):
         p_example = EXAMPLES_FOLDER / "examples" / (el.name + ".ipynb")
         if p_example.exists():
             rel_path = Path("..") / p_example.relative_to(P_ROOT)
-            example = f"{{{{< embed {rel_path} >}}}}"
+            example = f"{{{{< embed {rel_path} echo=true >}}}}"
             return DOCSTRING_TMPL.format(rendered=converted, examples=example)
 
         return converted
