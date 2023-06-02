@@ -6,6 +6,12 @@ project:
     - "reference/**.qmd"
     - "*.qmd"
 
+filters:
+  - interlinks
+
+interlinks:
+  sources: {}
+
 website:
   title: Plotnine
   navbar:
