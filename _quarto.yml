@@ -59,8 +59,9 @@ quartodoc:
     - title: geom
       desc: |
         Base class of all geoms
+      package: plotnine.geoms.geom
       contents:
-        - geoms.geom.geom
+        - geom
     - title: geoms
       desc: |
         Geometric objects (geoms) are responsible for the visual representation
