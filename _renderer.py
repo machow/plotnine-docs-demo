@@ -76,7 +76,7 @@ class Renderer(MdRenderer):
             else:
                 result.append(str_links)
 
-        return "*\n".join(result)
+        return "* " + "\n* ".join(result)
 
     def render_annotation(self, el: dc.Name | dc.Expression | None):
         return super().render_annotation(el)
