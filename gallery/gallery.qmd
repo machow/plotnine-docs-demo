@@ -1,0 +1,20 @@
+---
+title: Gallery
+description: "Gallery of plots using [nb_thumb](https://fastai.github.io/nb-thumb/)."
+---
+
+```{python}
+#|output: asis
+#|echo: false
+from nb_thumb import gallery
+
+plots = \
+[dict(nb_path= 'nbs/geom_col.ipynb', label='two_variable_bar_plot'),
+dict(nb_path='nbs/PlotnineAnimation.ipynb', label='spiral'),
+dict(nb_path='nbs/geom_density.ipynb', label='density_curve'),
+dict(nb_path='nbs/geom_map.ipynb', label='map'),
+dict(nb_path='nbs/geom_segment.ipynb', label='ranges'),
+dict(nb_path='nbs/geom_segment.ipynb', label='rank')]
+
+print(gallery(plots))
+```

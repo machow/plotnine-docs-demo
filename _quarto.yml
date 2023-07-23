@@ -18,6 +18,8 @@ website:
     left:
       - file: reference/index.qmd
         text: "Reference"
+      - file: gallery/gallery.qmd
+        text: "Gallery"
     right:
       - icon: github
         href: https://github.com/has2k1/plotnine
@@ -25,6 +27,7 @@ website:
 format:
   html:
     toc: true
+    css: styles.css
 
 quartodoc:
   style: pkgdown
