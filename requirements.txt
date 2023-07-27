@@ -1,5 +1,4 @@
 click
-griffe @ git+https://github.com/machow/griffe.git@fix-numpy-block-linebreaks
-quartodoc @ git+https://github.com/machow/quartodoc.git@dev-plotnine
+quartodoc
 plotnine @ git+https://github.com/machow/plotnine.git@docs-quartodoc
 pyyaml
