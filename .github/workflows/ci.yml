@@ -32,7 +32,7 @@ jobs:
           python -m pip install -r requirements.txt
       - uses: quarto-dev/quarto-actions/setup@v2
         with:
-          version: "1.3.275"
+          version: "1.4.268"
       - name: Build docs
         run: |
           make docs-build
