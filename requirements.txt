@@ -1,4 +1,5 @@
 click
+jupyterlab
 quartodoc
 plotnine @ git+https://github.com/machow/plotnine.git@docs-quartodoc
 pyyaml
