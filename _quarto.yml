@@ -16,6 +16,7 @@ website:
   title: Plotnine
   navbar:
     left:
+      - file: gallery/index.qmd
       - file: reference/index.qmd
         text: "Reference"
     right:
@@ -25,7 +26,8 @@ website:
 format:
   html:
     toc: true
-
+    css: styles.css
+  
 quartodoc:
   style: pkgdown
   dir: reference
@@ -42,7 +44,8 @@ quartodoc:
         - qplot
         - watermark
         - layer
-        - animation:PlotnineAnimation
+        - name: PlotnineAnimation
+          package: plotnine.animation
         - save_as_pdf_pages
     - title: Mapping aesthetics
       desc: |
