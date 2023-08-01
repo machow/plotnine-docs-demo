@@ -2,9 +2,11 @@ from __future__ import annotations
 
 import html
 from importlib.resources import files
+from numpydoc.docscrape import NumpyDocString
 from quartodoc import MdRenderer
 from quartodoc.renderers.base import convert_rst_link_to_md
 from quartodoc import layout
+from quartodoc import ast as qast
 from plum import dispatch
 from tabulate import tabulate
 from typing import Union
@@ -54,6 +56,27 @@ class Renderer(MdRenderer):
             return DOCSTRING_TMPL.format(rendered=converted, examples=example)
 
         return converted
+
+    @dispatch
+    def render(self, el: qast.DocstringSectionSeeAlso):
+        lines = el.value.split("\n")
+
+        # each entry in result has form: ([('func1', '<directive>), ...], <description>)
+        parsed = NumpyDocString("")._parse_see_also(lines)
+
+        result = []
+        for funcs, description in parsed:
+            links = [f"[{name}](`{name}`)" for name, role in funcs]
+
+            str_links = ", ".join(links)
+
+            if description:
+                str_description = "<br>".join(description)
+                result.append(f"{str_links}: {str_description}")
+            else:
+                result.append(str_links)
+
+        return "* " + "\n* ".join(result)
 
     def render_annotation(self, el: dc.Name | dc.Expression | None):
         return super().render_annotation(el)
