@@ -295,7 +295,7 @@ quartodoc:
 
     - subtitle: Manual scales
       desc: ""
-      package: plotnine.scales.scale_manual
+      package: plotnine.scales
       options: *main
       contents:
         - scale_alpha_manual
@@ -306,3 +306,260 @@ quartodoc:
         - scale_linetype_manual
         - scale_shape_manual
         - scale_size_manual
+
+    - subtitle: Linetype scales
+      package: plotnine.scales
+      contents:
+        - scale_linetype
+        # TODO: alias
+        #- scale_linetype_discrete
+
+    - subtitle: Shape scales
+      package: plotnine.scales
+      contents:
+        - scale_shape
+        # TODO: alias
+        #- scale_shape_discrete
+
+    - subtitle: Size scales
+      package: plotnine.scales
+      contents:
+        # TODO: alias of scale_size_continuous
+        #- scale_size
+        - scale_size_area
+        - scale_size_continuous
+        - scale_size_discrete
+        - scale_size_radius
+        - scale_size_datetime
+
+    - subtitle: Position scales
+      package: plotnine.scales
+      contents:
+        - scale_x_continuous
+        # TODO: alias
+        #- scale_x_date
+        - scale_x_datetime
+        - scale_x_discrete
+        - scale_x_log10
+        - scale_x_reverse
+        - scale_x_sqrt
+        - scale_x_timedelta
+        - scale_y_continuous
+        # TODO: alias
+        #- scale_y_date
+        - scale_y_datetime
+        - scale_y_discrete
+        - scale_y_log10
+        - scale_y_reverse
+        - scale_y_sqrt
+        - scale_y_timedelta
+
+
+    - subtitle: Scale limits
+      package: plotnine.scales
+      options: *main
+      contents:
+        - lims
+        - xlim
+        - ylim
+        - expand_limits
+
+    - subtitle: Scale guides
+      package: plotnine.guides
+      options: *main
+      contents:
+        - guides
+        - guide
+        - guide_legend
+        - guide_colorbar
+
+    - title: positions
+      desc: |
+        Overlapping objects can be visualized better if their positions are adjusted.
+        That is what the `position_*` class do. Each `geom` is associated with one position adjustment class.
+      package: plotnine.positions
+      options: *main
+      contents:
+        - position_dodge
+        - position_dodge2
+        - position_fill
+        - position_identity
+        - position_jitter
+        - position_jitterdodge
+        - position_nudge
+        - position_stack
+
+
+    - title: themes
+      desc: |
+        Themes control the visual appearance of the non-data elements the plot.
+      package: plotnine.themes
+      options: *main
+      contents:
+        - theme
+        - theme_538
+        - theme_bw
+        - theme_classic
+        - theme_dark
+        - theme_gray
+        # TODO: alias
+        - name: theme_grey
+          dynamic: plotnine.themes.theme_gray
+        - theme_light
+        - theme_linedraw
+        - theme_matplotlib
+        - theme_minimal
+        - theme_seaborn
+        - theme_tufte
+        - theme_void
+        - theme_xkcd
+
+    - subtitle: Themeables
+      desc: |
+        These define aspects of a plot that can be themed.
+        They can be used to create a new theme or modify an existing theme.
+        They define the keyword arguments to `theme`.
+        Users should never create instances of themeable.
+      package: plotnine.themes.themeable
+      contents:
+        - aspect_ratio
+        - axis_line
+        - axis_line_x
+        - axis_line_y
+        - axis_text
+        - axis_text_x
+        - axis_text_y
+        - axis_ticks
+        - axis_ticks_direction
+        - axis_ticks_direction_x
+        - axis_ticks_direction_y
+        - axis_ticks_length
+        - axis_ticks_length_major
+        - axis_ticks_length_minor
+        - axis_ticks_major
+        - axis_line
+        - axis_line_x
+        - axis_line_y
+        - axis_text
+        - axis_text_x
+        - axis_text_y
+        - axis_ticks
+        - axis_ticks_direction
+        - axis_ticks_direction_x
+        - axis_ticks_direction_y
+        - axis_ticks_length
+        - axis_ticks_length_major
+        - axis_ticks_length_minor
+        - axis_ticks_major
+        - axis_ticks_major_x
+        - axis_ticks_major_y
+        - axis_ticks_minor
+        - axis_ticks_minor_x
+        - axis_ticks_minor_y
+        - axis_ticks_pad
+        - axis_ticks_pad_major
+        - axis_ticks_pad_minor
+        - axis_title
+        - axis_title_x
+        - axis_title_y
+        - dpi
+        - figure_size
+        - legend_background
+        - legend_box
+        - legend_box_background
+        - legend_box_just
+        - legend_box_margin
+        - legend_box_spacing
+        - legend_direction
+        - legend_entry_spacing
+        - legend_entry_spacing_x
+        - legend_entry_spacing_y
+        - legend_key
+        - legend_key_height
+        - legend_key_size
+        - legend_key_width
+        - legend_margin
+        - legend_position
+        - legend_spacing
+        - legend_text
+        - legend_text_colorbar
+        - legend_text_legend
+        - legend_title
+        - legend_title_align
+        - line
+        - panel_background
+        - panel_border
+        - panel_grid
+        - panel_grid_major
+        - panel_grid_major_x
+        - panel_grid_major_y
+        - panel_grid_minor
+        - panel_grid_minor_x
+        - panel_grid_minor_y
+        - panel_ontop
+        - panel_spacing
+        - panel_spacing_x
+        - panel_spacing_y
+        - plot_background
+        - plot_margin
+        - plot_title
+        - rect
+        - strip_background
+        - strip_background_x
+        - strip_background_y
+        - strip_align
+        - strip_align_x
+        - strip_align_y
+        - strip_text
+        - strip_text_x
+        - strip_text_y
+        - text
+        - title
+        - themeable
+
+    - subtitle: Theme helper functions and classes
+      package: plotnine.themes
+      options: *main
+      contents:
+        - theme_set
+        - theme_get
+        - theme_update
+        - element_line
+        - element_rect
+        - element_text
+
+    - title: coordinates
+      desc: |
+        Coordinate systems put together the two position scales to produce a 2d location.
+      package: plotnine.coords
+      options: *main
+      contents:
+        - coord_cartesian
+        - coord_equal
+        - coord_fixed
+        - coord_flip
+        - coord_trans
+
+    - title: options
+      desc: |
+        When working interactively, some of the options make it convenient to create plots that have a common look and feel. Another way to do it, to set a default theme using `theme_set()`.
+      package: plotnine.options
+      contents: []
+        # TODO: debug why these don't load
+        #- aspect_ratio
+        #- base_family
+        #- base_margin
+        #- close_all_figures
+        #- current_theme
+        #- dpi
+        #- figure_size
+        #- get_option
+        #- set_option
+
+    - title: datasets
+      desc: |
+        These datasets ship with the plotnine and you can import them with from the `plotnine.data` sub-package.
+      package: plotnine.data
+      contents: []
+        # TODO: similar bug as above
+        #- diamonds
