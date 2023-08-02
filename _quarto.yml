@@ -47,6 +47,7 @@ quartodoc:
         - name: PlotnineAnimation
           package: plotnine.animation
         - save_as_pdf_pages
+
     - title: Mapping aesthetics
       desc: |
         Aesthetics are the visual properties of a plot. The following functions
@@ -59,26 +60,32 @@ quartodoc:
         - after_stat
         - after_scale
         - stage
-    - title: geom
-      desc: |
-        Base class of all geoms
-      package: plotnine.geoms.geom
-      contents:
-        - geom
+
+
     - title: geoms
       desc: |
         Geometric objects (geoms) are responsible for the visual representation
         of data points.  geom_* classes determine the kind of geometric objects
         and every plot must have at least one geom added to it. The distinct 
         visual aspects of the representation are controlled by the aes mapping.
-      package: plotnine.geoms
+
+    - package: plotnine.geoms.geom
+      options: &main
+        members: []
+      contents:
+        - geom
+
+    - package: plotnine.geoms
+      options: *main
       contents:
         - geom_abline
         - geom_area
         - geom_bar
         - geom_blank
         - geom_boxplot
-        - geom_col
+        - name: geom_col
+          members: []
+
         - geom_count
         - geom_crossbar
         - geom_density
@@ -116,34 +123,45 @@ quartodoc:
         - geom_tile
         - geom_violin
         - geom_vline
-    - title: related to geoms
+
+    - subtitle: related to geoms
       desc: ""
       package: plotnine.geoms
+      options: *main
       contents:
         - annotate
         - annotation_logticks
         - annotation_stripes
         # TODO: where is this?
         #- geom_path.arrow
-    - title: Labels
+        #
+    - subtitle: Labels
       desc: ""
       package: plotnine.labels
+      options: *main
       contents:
         - labs
         - xlab
         - ylab
         - ggtitle
+
+
     - title: stats
       desc: |
         Statistical transformations (stats) do aggregations and other computations
         on data before it is drawn out. `stat_*` determine the type of computation done
         on the data. Different types of computations yield varied results, so a `stat`
         must be paired with a `geom` that can represent all or some of the computations.
-      package: plotnine.stats
+
+    - package: plotnine.stats
       contents:
         # note it is this in plotnine docs: ~stat.stat
         # template: members-example.rst
         - stat
+
+    - package: plotnine.stats
+      options: *main
+      contents:
         # template: main.rst
         - stat_bin
         - stat_bin_2d
@@ -168,14 +186,20 @@ quartodoc:
         - stat_unique
         - stat_ydensity
 
+
     - title: facets
       desc: |
         Faceting is a way to subset data and plot it on different panels.
-      package: plotnine.facets
+
+    - package: plotnine.facets
       contents:
         # note it is this in plotnine docs: ~stat.stat
         # template: members-example.rst
         - facet
+
+    - package: plotnine.facets
+      options: *main
+      contents:
         # template: main.rst
         - facet_grid
         - facet_null
@@ -186,12 +210,17 @@ quartodoc:
         - labelling.label_value
         - labelling.label_both
         - labelling.label_context
+
+
     - title: scales
       desc: |
         Scales control the mapping from data to aesthetics. They take data and 
         adjust it to fit the different aspects of the visual sense i.e. length, 
         colour, size and shape.
+
+    - subtitle: Base scales
       package: plotnine.scales
+      options: *main
       contents:
         # these had a ~ in front of them
         # template: members-example.rst
@@ -199,18 +228,22 @@ quartodoc:
         - scale.scale_discrete
         - scale.scale_continuous
         - scale.scale_datetime
-    - title: Alpha scales
+
+    - subtitle: Alpha scales
       desc: ""
       package: plotnine.scales.scale_alpha
+      options: *main
       contents:
         - scale_alpha
         - scale_alpha_discrete
         # TODO: can't load. is this an alias of scale_alpha or something?
         #- scale_alpha_continuous
         - scale_alpha_datetime
-    - title: Identity scales
+
+    - subtitle: Identity scales
       desc: ""
       package: plotnine.scales.scale_identity
+      options: *main
       contents:
         - scale_alpha_identity
         - scale_color_identity
@@ -220,9 +253,11 @@ quartodoc:
         - scale_linetype_identity
         - scale_shape_identity
         - scale_size_identity
-    - title: Color and fill scales
+
+    - subtitle: Color and fill scales
       desc: ""
       package: plotnine.scales.scale_color
+      options: *main
       contents:
         - scale_color_brewer
         # TODO: this is an alias for the cmap below
@@ -257,9 +292,11 @@ quartodoc:
         #- scale_fill_gray
         - scale_fill_grey
         - scale_fill_hue
-    - title: Manual scales
+
+    - subtitle: Manual scales
       desc: ""
       package: plotnine.scales.scale_manual
+      options: *main
       contents:
         - scale_alpha_manual
         - scale_color_manual
