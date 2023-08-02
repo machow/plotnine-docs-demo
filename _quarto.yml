@@ -5,6 +5,7 @@ project:
   render:
     - "reference/**.qmd"
     - "*.qmd"
+    - "*.ipynb"
 
 filters:
   - interlinks
@@ -19,6 +20,8 @@ website:
       - file: gallery/index.qmd
       - file: reference/index.qmd
         text: "Reference"
+      - file: tutorials/index.qmd
+      - file: about.qmd
     right:
       - icon: github
         href: https://github.com/has2k1/plotnine
