@@ -1,6 +1,6 @@
 click
 jupyterlab
-quartodoc
+quartodoc @ git+https://github.com/machow/quartodoc.git@fix-dynamic-load
 plotnine @ git+https://github.com/machow/plotnine.git@docs-quartodoc
 pyyaml
 numpydoc
